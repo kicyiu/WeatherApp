@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './styles.css';
 
 const Location = ({ city }) => (
-        <div className="locationCont">
+        <div>
             <h1>{ city }</h1>
         </div>
 );
