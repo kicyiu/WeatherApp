@@ -4,7 +4,7 @@ import WeatherData from './WeatherData';
 import './styles.css';
 
 const WeatherLocation = () => (
-    <div>
+    <div className="weatherLocationCont">
         <Location city={"Beijing"} ></Location>
         <WeatherData></WeatherData>
     </div>
