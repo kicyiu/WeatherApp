@@ -23,5 +23,7 @@ LocationList.propTypes = {
 //linea
 //linea 2
 //linea 3
+//linea4
+//linea5
 
 export default LocationList;
