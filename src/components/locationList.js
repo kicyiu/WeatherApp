@@ -17,6 +17,6 @@ LocationList.propTypes = {
 }
 
 
-//texto de prueba
+//prueba cambio de head de prueba
 
 export default LocationList;
