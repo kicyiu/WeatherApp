@@ -20,5 +20,6 @@ LocationList.propTypes = {
 //prueba cambio de head holaaaaa
 //esta es otra linea
 //linea nueva
+//linea
 
 export default LocationList;
