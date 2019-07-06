@@ -21,5 +21,6 @@ LocationList.propTypes = {
 //esta es otra linea
 //linea nueva
 //linea
+//linea 2
 
 export default LocationList;
