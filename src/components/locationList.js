@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import WeatherLocation from './WeatherLocation';
 
 const strToComponents = cities => (
-    cities.map( city => <WeatherLocation city={ city } /> )
+    cities.map( city => <WeatherLocation key={ city } city={ city } /> )
 );
 
 const LocationList = ({ cities }) => (
@@ -17,13 +17,5 @@ LocationList.propTypes = {
 }
 
 
-//prueba cambio de head holaaaaa
-//esta es otra linea
-//linea nueva
-//linea
-//linea 2
-//linea 3
-//linea4
-//linea5
 
 export default LocationList;
