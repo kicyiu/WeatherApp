@@ -7,7 +7,6 @@ import WeatherData from './WeatherData';
 import './styles.css';
 import transformWeather from './../../services/transformWeather';
 
-
 class WeatherLocation extends Component {
     
     constructor(props) {
