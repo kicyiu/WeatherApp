@@ -1,7 +1,6 @@
 import React, { Component} from 'react';
-import LocationList from './components/locationList';
+import LocationList from './components/LocationList';
 import './App.css';
-import { MuiThemeProvider } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -29,7 +28,7 @@ class App extends Component {
         <Row>
           <AppBar position='sticky'>
             <Toolbar>
-              <Typography variant='title' color='inherit'>
+              <Typography variant='h5' color='inherit'>
                 Weather App 
               </Typography>
             </Toolbar>
@@ -44,7 +43,9 @@ class App extends Component {
             </LocationList>
           </Col>
           <Col xs={12} md={6}>
-            <div className="details"></div>
+            <Paper elevation={4}>
+              <div className="details"></div>
+            </Paper>
           </Col>
         </Row>
 
