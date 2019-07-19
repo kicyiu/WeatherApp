@@ -1,4 +1,4 @@
-import React, { component, Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class ForecastExtended extends Component {
