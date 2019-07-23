@@ -32,7 +32,18 @@ class ForecastExtended extends Component {
     }
 
     componentDidMount() {
-        const url_forecast = `${url}?q=${this.props.city}&appid=${api_key}`;
+        this.updateCity(this.props.city);
+    }
+
+    componentWillReceiveProps(nextsProps) {
+        if(nextsProps.city !== this.props.city) {
+            this.setState({forecastData: null});
+            this.updateCity(nextsProps.city);
+        }
+    }
+
+    updateCity = city => {
+        const url_forecast = `${url}?q=${city}&appid=${api_key}`;
         fetch(url_forecast).then(
             data => (data.json())
         ).then(
@@ -46,17 +57,6 @@ class ForecastExtended extends Component {
     }
 
     renderForecastItemDays(forecastData) {
-        /* const url_forecast = `${url}?q=${this.props.city}&appid=${api_key}`;
-        fetch(url_forecast).then(
-            data => (data.json())
-        ).then(
-            weather_data => {
-                console.log(weather_data);
-                const forecastData = transformForecast(weather_data);
-                console.log(forecastData);
-                this.setState({ forecastData })
-            }
-        ) */
         return forecastData.map( forecast => (
             <ForecastItem
                 key={`${forecast.weekDay}${forecast.hour}`}
