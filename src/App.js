@@ -1,13 +1,15 @@
 import React, { Component} from 'react';
+import { connect} from 'react-redux';  
 import LocationList from './components/LocationList';
 import './App.css';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import PropTypes from 'prop-types';
 import { AppBar } from '@material-ui/core';
 import ForecastExtended from './components/ForecastExtended';
-import { createStore } from 'redux';
+import { setCity } from './actions';
 
 const cities = [
   'Buenos Aires, ar',
@@ -17,11 +19,6 @@ const cities = [
   'Madrid, es',
   'San Francisco, us'
 ]
-
-const store = createStore(() => {},
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
-const setCity = value => ({ type: 'setCity', value});
 
 class App extends Component {
 
@@ -34,8 +31,7 @@ class App extends Component {
     this.setState({ city });
     console.log(`handleSelectionLocation ${city}`);
 
-    
-    store.dispatch(setCity(city));
+    this.props.setCity(city);
   }
 
   render() {
@@ -78,4 +74,12 @@ class App extends Component {
   }
 }
 
-export default App;
+App.propTypes = {
+  setCity: PropTypes.func.isRequired,
+}
+
+const mapDispatchToPropsActions = dispatch => ({
+  setCity: value => dispatch(setCity(value)) //este key setCity es el que se usa para referencial en el props, el setCity dentro de dispatch no tiene nada que ver
+});
+
+export default connect(null, mapDispatchToPropsActions)(App);
