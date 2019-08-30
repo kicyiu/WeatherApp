@@ -25,8 +25,10 @@ LocationListContainer.propTypes = {
     cities: PropTypes.array.isRequired,
 };
 
+
 const mapDispatchToPropsActions = dispatch => ({
     setCity: value => dispatch(setCity(value)) //este key setCity es el que se usa para referencial en el props, el setCity dentro de dispatch no tiene nada que ver
+    // setCity: value => {console.log("setCity value: ", value); return dispatch(setCity(value));}
 });
 
 export default connect(null, mapDispatchToPropsActions)(LocationListContainer);
